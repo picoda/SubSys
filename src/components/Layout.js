@@ -1,7 +1,8 @@
-import React from 'react'
-import TopBar from './TopBar'
+import React, {Component} from 'react';
+import TopBar from './TopBar';
+import MainPage from "./MainPage";
 
-class Layout extends React.Component {
+class Layout extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -20,6 +21,7 @@ class Layout extends React.Component {
         return (
             <div>
                 <TopBar activePage={this.setActive}/>
+                <MainPage activePage={this.state.active} />
             </div>
         );
     }
