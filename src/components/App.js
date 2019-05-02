@@ -1,12 +1,20 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Button } from 'semantic-ui-react'
 
-function App() {
-  return (
-    <div>
-       <Button>Click Here</Button>
-    </div>
-  );
+class App extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      
+    };
+  }
+  render(){
+    return (
+      <div>
+         <Button>Click Here</Button>
+      </div>
+    );
+  }
 }
 
 export default App;
