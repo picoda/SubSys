@@ -20,18 +20,18 @@ class TopBar extends Component {
     render() {
         return (
             <Menu inverted>
-            <Menu.Item name='home' active={this.state.activeItem === 'home'} onClick={this.handleItemClick} />
-            <Menu.Item
-              name='messages'
-              active={this.state.activeItem === 'messages'}
-              onClick={this.handleItemClick}
-            />
-            <Menu.Item
-              name='friends'
-              active={this.state.activeItem === 'friends'}
-              onClick={this.handleItemClick}
-            />
-          </Menu>
+                <Menu.Item name='home' active={this.state.activeItem === 'home'} onClick={this.handleItemClick} />
+                <Menu.Item
+                    name='Submit'
+                    active={this.state.activeItem === 'submit'}
+                    onClick={this.handleItemClick}
+                />
+                <Menu.Item
+                    name='Grades'
+                    active={this.state.activeItem === 'grades'}
+                    onClick={this.handleItemClick}
+                />
+            </Menu>
         );
     }
 }
