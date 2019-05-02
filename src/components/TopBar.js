@@ -1,30 +1,37 @@
-import React from 'react'
+import React, {Component} from 'react'
+import { Menu } from 'semantic-ui-react'
 
-class TopBar extends React.Component {
+class TopBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            active: "Home"
+            activeItem: "Home"
         };
 
-        this.setActive = this.setActive.bind(this);
+        this.handleItemClick = this.handleItemClick.bind(this);
     }
 
-    setActive(page){
-        this.setState({active: page});
-        this.props.activePage(page);
+    handleItemClick(e, { name }) {
+        this.setState({ activeItem: name });
+        this.props.activePage(name);
     }
+    
 
     render() {
         return (
-            <div className="ui inverted segment">
-                <div className="ui inverted pointing secondary menu">
-                    <a onClick={()=>this.setActive("Home")} id="Home" className="active item">Home</a>
-                    <a onClick={()=>this.setActive("Submit")} id="Submit" className="item">Submit</a>
-                    <a onClick={()=>this.setActive("Login")} id="Login" className="item right">Login</a>
-                    <a onClick={()=>this.setActive("Register")} id="Register" className="item">Register</a>
-                </div>
-            </div>
+            <Menu inverted>
+            <Menu.Item name='home' active={this.state.activeItem === 'home'} onClick={this.handleItemClick} />
+            <Menu.Item
+              name='messages'
+              active={this.state.activeItem === 'messages'}
+              onClick={this.handleItemClick}
+            />
+            <Menu.Item
+              name='friends'
+              active={this.state.activeItem === 'friends'}
+              onClick={this.handleItemClick}
+            />
+          </Menu>
         );
     }
 }
