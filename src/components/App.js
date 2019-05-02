@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import { Button } from 'semantic-ui-react'
+import React from 'react';
+import Layout from './Layout';
 
-class App extends Component {
+class App extends React.Component {
   constructor(props){
     super(props);
     this.state={
@@ -20,10 +20,11 @@ class App extends Component {
   render(){
     return (
       <div>
-         <Button onClick={this.call}>{this.state.buttonValue}</Button>
+          <Layout />
       </div>
     );
   }
 }
 
 export default App;
+//<Button onClick={this.call}>{this.state.buttonValue}</Button>
