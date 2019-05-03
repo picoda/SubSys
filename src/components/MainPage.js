@@ -15,7 +15,7 @@ class MainPage extends Component {
 
     handleFileEnd(e){
         const content = (this.state.fileReader).result;
-       /* fetch('http://127.0.0.1:5001/upload/submit', {
+        fetch('https://submission-system.appspot.com/upload/submit', {
             method: 'POST',
             body: JSON.stringify({
                 content: content,
@@ -26,7 +26,7 @@ class MainPage extends Component {
             headers: {
                 'Content-Type': 'application/json',
             }
-        }).then(res=>res.text).then(data => console.log(data));*/
+        }).then(res=>res.text).then(data => console.log(data));
     }
 
     onChange(e){
