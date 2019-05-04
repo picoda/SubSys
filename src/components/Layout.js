@@ -1,28 +1,34 @@
-import React from 'react'
-import TopBar from './TopBar'
+import React, { Component } from "react";
+import TopBar from "./MenuBar/TopBar";
+import PageController from "./pages/PageController";
 
-class Layout extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            active: "Home"
-        };
+class Layout extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      active: "Home"
+    };
 
-        this.setActive = this.setActive.bind(this);
-    }
+    this.setActive = this.setActive.bind(this);
+  }
 
-    setActive(page){
-        this.setState({active:page});
-        console.log(page);
-    }
+  setActive(page) {
+    this.setState({ active: page });
+    this.changePage(page);
+    console.log(page);
+  }
 
-    render() {
-        return (
-            <div>
-                <TopBar activePage={this.setActive}/>
-            </div>
-        );
-    }
+  changePage(page) {
+
+  }
+
+  render() {
+    return (
+      <div>
+        <TopBar activePage={this.setActive} />
+      </div>
+    );
+  }
 }
 
 export default Layout;
